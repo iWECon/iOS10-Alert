@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  LoginTable.h
 //  NetWorking
 //
 //  Created by iWe on 2016/3/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface LoginTable : UITableViewController
 
 @end
-

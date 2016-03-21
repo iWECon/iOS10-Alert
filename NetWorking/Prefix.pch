@@ -1,0 +1,24 @@
+//
+//  Prefix.pch
+//  NetWorking
+//
+//  Created by iWe on 2016/3/18.
+//  Copyright © 2016年 iWe. All rights reserved.
+//
+
+#ifndef Prefix_pch
+#define Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#if 0
+#define server_ip @"http://192.168.1.186/classes/iosClass11"
+#else
+#define server_ip @"http://1.zhongweidi.applinzi.com/iosClass11"
+#endif
+
+#import "ExObject.h"
+
+
+#endif /* Prefix_pch */
