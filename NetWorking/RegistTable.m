@@ -62,7 +62,7 @@
     
     
     
-    setBlurBackGroundView(windowView, true);
+    setBlurBackGroundView(true);
     
     if (![_passwordTextField.text isEqualToString:self.confirmTextField.text]) {
         
@@ -71,14 +71,13 @@
         
         [tipsView showTips:@"两次输入密码不同！" cancelTarget:^{
             [self.passwordTextField becomeFirstResponder];
-            setBlurBackGroundView(windowView, false);
+            setBlurBackGroundView(false);
         } okTarget:^{
             [self.passwordTextField becomeFirstResponder];
-            setBlurBackGroundView(windowView, false);
+            setBlurBackGroundView(false);
         }];
         
         [tipsView show:true];
-        
         
     }
     

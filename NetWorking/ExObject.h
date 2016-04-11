@@ -21,4 +21,4 @@ void performAfterDelay(NSTimeInterval delay, afterDelayBlock block);
 void setStatusStyle(int styleIndex);
 
 
-void setBlurBackGroundView(UIView * rootView, BOOL isShow);
+void setBlurBackGroundView(BOOL isShow);

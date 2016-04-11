@@ -29,7 +29,9 @@ void setStatusStyle(int styleIndex) {
     
 };
 
-void setBlurBackGroundView(UIView * rootView, BOOL isShow) {
+void setBlurBackGroundView(BOOL isShow) {
+    
+    UIView * widnow = [UIApplication sharedApplication].windows.firstObject;
     
     if (isShow) {
         
@@ -37,14 +39,18 @@ void setBlurBackGroundView(UIView * rootView, BOOL isShow) {
         
         UIVisualEffectView * effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
         
-        effectView.frame = rootView.frame;
+        effectView.frame = widnow.frame;
+        effectView.alpha = 0;
+        [widnow addSubview:effectView];
         
-        [rootView addSubview:effectView];
+        [UIView animateWithDuration:1.0 animations:^{
+            effectView.alpha = 1;
+        }];
         
     } else {
         
-        UIVisualEffectView * effectView;
-        for (UIView * effect in rootView.subviews) {
+        __block UIVisualEffectView * effectView;
+        for (UIView * effect in widnow.subviews) {
             if ([effect isKindOfClass:[UIVisualEffectView class]]) {
                 effectView = (UIVisualEffectView *)effect;
                 break;
@@ -55,6 +61,7 @@ void setBlurBackGroundView(UIView * rootView, BOOL isShow) {
             effectView.alpha = 0.01;
         } completion:^(BOOL finished) {
             [effectView removeFromSuperview];
+            effectView = nil;
         }];
         
     }

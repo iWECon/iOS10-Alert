@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pe2-VH-Fpp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pe2-VH-Fpp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -51,7 +51,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="账号" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6L-N0-80p">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1214i" placeholder="账号" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g6L-N0-80p">
                                                     <rect key="frame" x="40" y="7" width="240" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="r4H-mo-w9b"/>
@@ -60,16 +60,23 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="____________________________" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38n-Cf-GD7">
-                                                    <rect key="frame" x="51" y="26" width="217" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="____________________________" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38n-Cf-GD7">
+                                                    <rect key="frame" x="53" y="26" width="213.5" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="3RM-2j-Z1z"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="38n-Cf-GD7" firstAttribute="centerX" secondItem="g6L-N0-80p" secondAttribute="centerX" id="1B8-mG-0de"/>
+                                                <constraint firstItem="38n-Cf-GD7" firstAttribute="centerX" secondItem="2tL-LR-eTW" secondAttribute="centerX" id="HN7-QV-rD4"/>
+                                                <constraint firstItem="g6L-N0-80p" firstAttribute="centerX" secondItem="2tL-LR-eTW" secondAttribute="centerX" id="iZJ-f9-htl"/>
                                                 <constraint firstItem="g6L-N0-80p" firstAttribute="top" secondItem="2tL-LR-eTW" secondAttribute="top" constant="7" id="o4g-Ae-yFs"/>
                                                 <constraint firstItem="g6L-N0-80p" firstAttribute="leading" secondItem="2tL-LR-eTW" secondAttribute="leading" constant="40" id="pub-0r-8lx"/>
+                                                <constraint firstItem="38n-Cf-GD7" firstAttribute="top" secondItem="2tL-LR-eTW" secondAttribute="top" constant="26" id="qcz-RZ-APP"/>
                                                 <constraint firstAttribute="trailing" secondItem="g6L-N0-80p" secondAttribute="trailing" constant="40" id="rXA-K3-acK"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -82,7 +89,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="diS-hh-gzw">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="win" placeholder="密码" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="diS-hh-gzw">
                                                     <rect key="frame" x="40" y="7" width="240" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Pit-lb-i79"/>
@@ -107,9 +114,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzs-6w-O2T">
-                                                    <rect key="frame" x="40" y="17" width="240" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzs-6w-O2T">
+                                                    <rect key="frame" x="40" y="17" width="240" height="40"/>
                                                     <color key="backgroundColor" red="0.29933284240000002" green="0.76850916520000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="cKq-VS-3uk"/>
+                                                    </constraints>
                                                     <state key="normal" title="登  录">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -123,16 +133,24 @@
                                                         <action selector="loginAction:" destination="pe2-VH-Fpp" eventType="touchUpInside" id="4Qp-ep-RQG"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVU-lk-n6Q">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVU-lk-n6Q">
                                                     <rect key="frame" x="40" y="62" width="60" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="NmA-Pj-KnX"/>
+                                                        <constraint firstAttribute="height" constant="30" id="pHp-bf-P99"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="忘记密码">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2D9-iu-Cu0">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2D9-iu-Cu0">
                                                     <rect key="frame" x="220" y="62" width="60" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="Tiz-k7-Aww"/>
+                                                        <constraint firstAttribute="height" constant="30" id="dgi-g2-d9z"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="注册账号">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -141,6 +159,15 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="IVU-lk-n6Q" secondAttribute="bottom" constant="3" id="7xF-vT-eDi"/>
+                                                <constraint firstItem="pzs-6w-O2T" firstAttribute="leading" secondItem="n6m-0c-lgR" secondAttribute="leading" constant="40" id="AjP-si-XO5"/>
+                                                <constraint firstItem="2D9-iu-Cu0" firstAttribute="trailing" secondItem="pzs-6w-O2T" secondAttribute="trailing" id="BA0-Ia-iXV"/>
+                                                <constraint firstItem="IVU-lk-n6Q" firstAttribute="leading" secondItem="pzs-6w-O2T" secondAttribute="leading" id="hmR-4v-NZQ"/>
+                                                <constraint firstItem="2D9-iu-Cu0" firstAttribute="top" secondItem="pzs-6w-O2T" secondAttribute="bottom" constant="5" id="l1k-dg-HWU"/>
+                                                <constraint firstAttribute="bottom" secondItem="2D9-iu-Cu0" secondAttribute="bottom" constant="3" id="pMl-xN-rWb"/>
+                                                <constraint firstAttribute="trailing" secondItem="pzs-6w-O2T" secondAttribute="trailing" constant="40" id="w4x-Pu-WMw"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
@@ -155,6 +182,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="accountTextField" destination="g6L-N0-80p" id="zEV-ky-TXT"/>
+                        <outlet property="login" destination="pzs-6w-O2T" id="Cin-i8-EiQ"/>
                         <outlet property="passwordTextField" destination="diS-hh-gzw" id="b9u-D6-5gY"/>
                     </connections>
                 </tableViewController>

@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *accountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *login;
 
 @end
 
@@ -28,7 +29,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self.accountTextField becomeFirstResponder];
+//    [self.accountTextField becomeFirstResponder];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -43,16 +44,17 @@
 
 - (IBAction)loginAction:(id)sender {
     
-    setBlurBackGroundView(windowView, true);
+    setBlurBackGroundView(true);
     
     TipsView * tips = [[NSBundle mainBundle] loadNibNamed:@"TipsView" owner:self options:nil].firstObject;
     [windowView addSubview:tips];
     
     [tips showTips:@"无法登录\n请稍后再试..." cancelTarget:^{
-        setBlurBackGroundView(windowView, false);
+        setBlurBackGroundView(false);
     } okTarget:^{
-        setBlurBackGroundView(windowView, false);
+        setBlurBackGroundView(false);
     }];
+    
     [tips show:true];
 }
 

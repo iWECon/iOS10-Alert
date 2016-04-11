@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA4A24561C9B920400C37E1B /* NetWorking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetWorking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA4A24561C9B920400C37E1B /* iOS10Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS10Alert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA91B21D1C9BE5E60044CB81 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA91B21E1C9BE5E60044CB81 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA91B21F1C9BE5E60044CB81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		DA4A244D1C9B920400C37E1B = {
 			isa = PBXGroup;
 			children = (
-				DA91B21C1C9BE5E60044CB81 /* NetWorking */,
+				DA91B21C1C9BE5E60044CB81 /* iOS10Alert */,
 				DA4A24571C9B920400C37E1B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,22 +65,23 @@
 		DA4A24571C9B920400C37E1B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA4A24561C9B920400C37E1B /* NetWorking.app */,
+				DA4A24561C9B920400C37E1B /* iOS10Alert.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DA91B21C1C9BE5E60044CB81 /* NetWorking */ = {
+		DA91B21C1C9BE5E60044CB81 /* iOS10Alert */ = {
 			isa = PBXGroup;
 			children = (
 				DA9CD9281C9F83B0001173B1 /* Model */,
 				DA9CD9291C9F83B8001173B1 /* View */,
 				DA9CD92A1C9F83BE001173B1 /* Controller */,
 				DA9CD92B1C9F83E7001173B1 /* Supporting Files */,
-				DA91B2251C9BE5E60044CB81 /* LaunchScreen.storyboard */,
 				DA91B2291C9BE5E60044CB81 /* Main.storyboard */,
+				DA91B2251C9BE5E60044CB81 /* LaunchScreen.storyboard */,
 				DA91B21F1C9BE5E60044CB81 /* Assets.xcassets */,
 			);
+			name = iOS10Alert;
 			path = NetWorking;
 			sourceTree = "<group>";
 		};
@@ -130,9 +131,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA4A24551C9B920400C37E1B /* NetWorking */ = {
+		DA4A24551C9B920400C37E1B /* iOS10Alert */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA4A24701C9B920400C37E1B /* Build configuration list for PBXNativeTarget "NetWorking" */;
+			buildConfigurationList = DA4A24701C9B920400C37E1B /* Build configuration list for PBXNativeTarget "iOS10Alert" */;
 			buildPhases = (
 				DA4A24521C9B920400C37E1B /* Sources */,
 				DA4A24531C9B920400C37E1B /* Frameworks */,
@@ -142,9 +143,9 @@
 			);
 			dependencies = (
 			);
-			name = NetWorking;
+			name = iOS10Alert;
 			productName = NetWorking;
-			productReference = DA4A24561C9B920400C37E1B /* NetWorking.app */;
+			productReference = DA4A24561C9B920400C37E1B /* iOS10Alert.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -162,7 +163,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DA4A24511C9B920400C37E1B /* Build configuration list for PBXProject "NetWorking" */;
+			buildConfigurationList = DA4A24511C9B920400C37E1B /* Build configuration list for PBXProject "iOS10Alert" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -175,7 +176,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA4A24551C9B920400C37E1B /* NetWorking */,
+				DA4A24551C9B920400C37E1B /* iOS10Alert */,
 			);
 		};
 /* End PBXProject section */
@@ -302,8 +303,9 @@
 				INFOPLIST_FILE = NetWorking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.iWecon.NetWorking;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.iWecon.iOS10Alert;
+				PRODUCT_NAME = iOS10Alert;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -314,15 +316,16 @@
 				INFOPLIST_FILE = NetWorking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cc.iWecon.NetWorking;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.iWecon.iOS10Alert;
+				PRODUCT_NAME = iOS10Alert;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA4A24511C9B920400C37E1B /* Build configuration list for PBXProject "NetWorking" */ = {
+		DA4A24511C9B920400C37E1B /* Build configuration list for PBXProject "iOS10Alert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA4A246E1C9B920400C37E1B /* Debug */,
@@ -331,7 +334,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA4A24701C9B920400C37E1B /* Build configuration list for PBXNativeTarget "NetWorking" */ = {
+		DA4A24701C9B920400C37E1B /* Build configuration list for PBXNativeTarget "iOS10Alert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA4A24711C9B920400C37E1B /* Debug */,

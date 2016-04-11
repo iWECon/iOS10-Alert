@@ -22,8 +22,14 @@
 @implementation TipsView
 
 - (void)awakeFromNib {
+    
+    [self.layer setShadowColor:[UIColor blackColor].CGColor];
+    [self.layer setShadowOffset:CGSizeMake(3, 3)];
+    [self.layer setShadowRadius:5];
+    [self.layer setShadowPath:[UIBezierPath bezierPathWithRect:self.bounds].CGPath];
+    
     self.layer.cornerRadius = 3;
-    self.layer.masksToBounds = true;
+    self.layer.masksToBounds = NO;
     self.alpha = 0;
     
     self.tipsLabel.numberOfLines = 0;
@@ -32,14 +38,8 @@
     [self.tipsLabel addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-    }
-    return self;
-}
 
+#pragma mark- 初始化 设置显示信息
 - (void)showTips:(NSString *)content cancelTarget:(cancelBlock)cancelBlock okTarget:(okBlock)okBlock {
     
     self.tipsLabel.text = content;
@@ -48,7 +48,7 @@
     
 }
 
-
+#pragma mark- kvo 计算视图大小
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     
     
@@ -79,11 +79,33 @@
 }
 
 
+#pragma mark- kvo 释放
 - (void)dealloc {
     [self.tipsLabel removeObserver:self forKeyPath:@"text"];
 }
 
+- (void)hidden:(BOOL)isHidden {
+    if (isHidden) {
+        [self show:false];
+    }
+    return;
+}
 
+- (IBAction)cancel:(id)sender {
+    if (self.cancelAction) {
+        self.cancelAction();
+    }
+    [self hidden:true];
+}
+
+- (IBAction)ok:(id)sender {
+    if (self.okAction) {
+        self.okAction();
+    }
+    [self hidden:true];
+}
+
+// 显示alert, 计算内容大小
 - (void)show:(BOOL)isShow {
     if (isShow) {
         
@@ -96,12 +118,23 @@
         
         self.alpha = 0;
         
-        CGAffineTransform defaultTransform = CGAffineTransformMakeRotation(-M_PI);
-        CGAffineTransform transform =  CGAffineTransformRotate(defaultTransform, M_PI);
         
-        [UIView animateWithDuration:1.0 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseIn  animations:^{
+        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseIn  animations:^{
             
-            [self setTransform:transform];
+            [self setTransform:CGAffineTransformMakeRotation(M_PI)];
+            
+            self.frame = CGRectMake(windowSize.width/2 - self.frame.size.width/2,
+                                    (windowSize.height/2 - self.frame.size.height/2)/4*3,
+                                    self.frame.size.width,
+                                    self.frame.size.height);
+            
+            self.alpha = 0.5;
+            
+        } completion:^(BOOL finished) {}];
+        
+        [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseIn  animations:^{
+            
+            [self setTransform:CGAffineTransformMakeRotation(0)];
             
             self.frame = CGRectMake(windowSize.width/2 - self.frame.size.width/2,
                                     windowSize.height/2 - self.frame.size.height/2,
@@ -110,11 +143,7 @@
             
             self.alpha = 1;
             
-        } completion:^(BOOL finished) {
-        
-        
-        }];
-        
+        } completion:^(BOOL finished) {}];
         
         // 隐藏
     } else {
@@ -124,29 +153,12 @@
             self.alpha = 0;
             
         } completion:^(BOOL finished) {
+            
             [self removeFromSuperview];
         }];
         
     }
 }
-
-- (void)hidden:(BOOL)isHidden {
-    if (isHidden) {
-        [self show:false];
-    }
-    return;
-}
-
-- (IBAction)cancel:(id)sender {
-    self.cancelAction();
-    [self hidden:true];
-}
-
-- (IBAction)ok:(id)sender {
-    self.okAction();
-    [self hidden:true];
-}
-
 
 /*
  // Only override drawRect: if you perform custom drawing.
