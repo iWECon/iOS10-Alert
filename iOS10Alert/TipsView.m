@@ -63,18 +63,26 @@
     
     self.tipsLabel.frame = tipsRect;
     
-    CGRect cancelOfOriginY = self.cancelOutlet.frame;
-    CGRect okOfOriginY = self.okOutlet.frame;
-    cancelOfOriginY.origin.y = self.tipsLabel.frame.origin.y + self.tipsLabel.frame.size.height + 5;
-    okOfOriginY.origin.y = self.tipsLabel.frame.origin.y + self.tipsLabel.frame.size.height + 5;
     
-    self.cancelOutlet.frame = cancelOfOriginY;
-    self.okOutlet.frame = okOfOriginY;
     
     // 新的视图大小
     CGRect newRect = self.frame;
-    newRect.size = CGSizeMake(exObject_ScreenFrame.size.width/4*3,
-                              self.okOutlet.frame.origin.y + self.okOutlet.frame.size.height + 5);
+    newRect.size = CGSizeMake(exObject_ScreenFrame.size.width/4*3, self.okOutlet.frame.origin.y + self.okOutlet.frame.size.height + 5);
+    
+    CGRect cancelOfOrigin = self.cancelOutlet.frame;
+    CGRect okOfOrigin = self.okOutlet.frame;
+    
+    cancelOfOrigin.origin.y = self.tipsLabel.frame.origin.y + self.tipsLabel.frame.size.height + 5;
+    okOfOrigin.origin.y = self.tipsLabel.frame.origin.y + self.tipsLabel.frame.size.height + 5;
+    
+    okOfOrigin.origin.x = newRect.size.width - okOfOrigin.size.width - 8;
+    cancelOfOrigin.origin.x = okOfOrigin.origin.x - cancelOfOrigin.size.width - 8;
+    
+    self.cancelOutlet.frame = cancelOfOrigin;
+    self.okOutlet.frame = okOfOrigin;
+    
+    
+    
     self.frame = newRect;
 }
 
