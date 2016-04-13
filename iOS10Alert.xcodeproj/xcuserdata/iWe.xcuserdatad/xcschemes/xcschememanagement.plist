@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>iOS10Alert copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>DA429D7B1CBE285B007C526F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DA4A24551C9B920400C37E1B</key>
 		<dict>
 			<key>primary</key>

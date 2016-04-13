@@ -21,11 +21,13 @@ void performAfterDelay(NSTimeInterval delay, afterDelayBlock block) {
 
 void setStatusStyle(int styleIndex) {
     
+    UIStatusBarStyle style;
     if (styleIndex == 0) {
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:true];
+        style = UIStatusBarStyleDefault;
     } else {
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:true];
+        style = UIStatusBarStyleLightContent;
     }
+    [[UIApplication sharedApplication] setStatusBarStyle:style animated:true];
     
 };
 

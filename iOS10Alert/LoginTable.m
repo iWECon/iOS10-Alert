@@ -45,17 +45,35 @@
 - (IBAction)loginAction:(id)sender {
     
     setBlurBackGroundView(true);
+    [self showAnimateWithCurrentView:true];
     
     TipsView * tips = [[NSBundle mainBundle] loadNibNamed:@"TipsView" owner:self options:nil].firstObject;
     [windowView addSubview:tips];
     
     [tips showTips:@"无法登录\n请稍后再试..." cancelTarget:^{
         setBlurBackGroundView(false);
+        [self showAnimateWithCurrentView:false];
     } okTarget:^{
         setBlurBackGroundView(false);
+        [self showAnimateWithCurrentView:false];
     }];
     
     [tips show:true];
+}
+
+- (void)showAnimateWithCurrentView:(BOOL)isScale {
+    CGFloat scalePoint;
+    if (isScale) {
+        scalePoint = 0.93;
+    } else {
+        scalePoint = 1.0;
+    }
+    
+    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionLayoutSubviews | UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionAllowUserInteraction animations:^{
+        self.view.transform = CGAffineTransformMakeScale(scalePoint, scalePoint);
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 
